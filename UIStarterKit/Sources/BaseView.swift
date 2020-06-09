@@ -42,19 +42,13 @@ open class BaseViewClass: UIView {
             setUIStyle(mode: Theme.mode(userInterfaceStyle: self.traitCollection.userInterfaceStyle))
         }
     }
-    public func setSizeClassSpecificConstraints() {
-        
-    }
+    public func setSizeClassSpecificConstraints() { }
     
-    public func setUIStyle(mode: Theme.Mode?){
-        
-    }
+    public func setUIStyle(mode: Theme.Mode?) { }
     
 }
 
 public protocol BaseTableViewProtocols {
-    func setupView()
-    func setupLayout()
     func registerCells()
     func setTableDelegateDataSource()
 }
@@ -71,7 +65,7 @@ open class BaseTableViewClass: UIView {
         return tableView
     }()
     
-    init() {
+    public init() {
         super.init(frame: .zero)
         tableSetupViewAndLayout()
         guard let delegate = self as? BaseTableViewProtocols else { return }
@@ -95,13 +89,13 @@ open class BaseTableViewClass: UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
-    public func setSizeClassSpecificConstraints() {
-        
-    }
+    public func setSizeClassSpecificConstraints() { }
     
-    public func setUIStyle(mode: Theme.Mode?){
-        
-    }
+    public func setUIStyle(mode: Theme.Mode?){ }
+    
+    public func setupView() { }
+
+    public func setupLayout() { }
     
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -113,6 +107,7 @@ open class BaseTableViewClass: UIView {
             setUIStyle(mode: Theme.mode(userInterfaceStyle: self.traitCollection.userInterfaceStyle))
         }
     }
+    
 }
 
 extension UITableView {
