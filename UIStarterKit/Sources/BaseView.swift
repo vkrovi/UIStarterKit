@@ -53,34 +53,36 @@ public protocol BaseTableViewProtocols {
     func setTableDelegateDataSource()
 }
 
-public typealias BaseTableView = BaseTableViewProtocols & BaseTableViewClass
+public typealias BaseTableView = BaseTableViewClass & BaseTableViewProtocols
 
 open class BaseTableViewClass: UIView {
-    public lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .clear
-        tableView.separatorColor = .clear
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 60.0
-        return tableView
-    }()
     
-    public init() {
+    public lazy var tableView: UITableView = UITableView.generic(style: self.tableViewStyle)
+    let tableViewStyle: UITableView.Style
+    public init(tableViewStyle: UITableView.Style) {
+        self.tableViewStyle = tableViewStyle
         super.init(frame: .zero)
-        tableSetupViewAndLayout()
-        guard let delegate = self as? BaseTableViewProtocols else { return }
-        delegate.registerCells()
-        delegate.setTableDelegateDataSource()
-        
+        setupView()
+        setupLayout()
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func tableSetupViewAndLayout() {
+    open func setSizeClassSpecificConstraints() { }
+    
+    open func setUIStyle(mode: Theme.Mode?){ }
+    
+    open func setupView() {
         addSubview(tableView)
+        guard let delegate = self as? BaseTableViewProtocols else { return }
+        delegate.registerCells()
+        delegate.setTableDelegateDataSource()
+    }
+
+    open func setupLayout() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
         tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -88,14 +90,6 @@ open class BaseTableViewClass: UIView {
         tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)]
         NSLayoutConstraint.activate(constraints)
     }
-    
-    public func setSizeClassSpecificConstraints() { }
-    
-    public func setUIStyle(mode: Theme.Mode?){ }
-    
-    public func setupView() { }
-
-    public func setupLayout() { }
     
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
