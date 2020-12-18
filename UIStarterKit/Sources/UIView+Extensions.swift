@@ -53,25 +53,19 @@ extension UIView {
         layer.rasterizationScale = 1.0
     }
     
-    public func setBorder(color: UIColor) {
+    public func setBorder(color: UIColor, width: CGFloat =  1.0) {
         layer.borderColor = color.cgColor
         layer.masksToBounds = true
-        layer.borderWidth = 1.0
+        layer.borderWidth = width
     }
 }
 
-extension UICollectionView {
-    public static func generic(direction: UICollectionView.ScrollDirection = .vertical, minimumLineSpacing: CGFloat = 16.0, minimumInteritemSpacing: CGFloat = 16.0, insets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0), allowsSelection: Bool = true, allowsMultipleSelection: Bool = false) -> UICollectionView {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = direction
-        layout.minimumLineSpacing = minimumLineSpacing
-        layout.minimumInteritemSpacing = minimumInteritemSpacing
-        layout.sectionInset = insets
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.isScrollEnabled = true
-        collectionView.allowsSelection = allowsSelection
-        collectionView.allowsMultipleSelection = allowsMultipleSelection
-        collectionView.backgroundColor = .clear
-        return collectionView
+extension UIImageView {
+    static func generic(contentMode: UIImageView.ContentMode = .scaleAspectFit, backgroundColor: UIColor = .clear, image: UIImage? = nil) -> UIImageView {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = contentMode
+        imageView.backgroundColor = backgroundColor
+        imageView.image = image
+        return imageView
     }
 }

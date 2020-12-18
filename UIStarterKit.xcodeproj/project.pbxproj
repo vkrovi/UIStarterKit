@@ -25,6 +25,8 @@
 		1A0AA36E2481586A00BA8D0F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0AA36C2481586A00BA8D0F /* ActionButton.swift */; };
 		1A0AA36F2481586A00BA8D0F /* ActionButtonTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0AA36D2481586A00BA8D0F /* ActionButtonTheme.swift */; };
 		1A0AA3712481587300BA8D0F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0AA3702481587300BA8D0F /* Theme.swift */; };
+		1A56FC27258D0D8100628C15 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A56FC26258D0D8100628C15 /* BaseTableView.swift */; };
+		1A56FC2C258D0DC100628C15 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A56FC2B258D0DC100628C15 /* BaseCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		1A0AA36C2481586A00BA8D0F /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		1A0AA36D2481586A00BA8D0F /* ActionButtonTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonTheme.swift; sourceTree = "<group>"; };
 		1A0AA3702481587300BA8D0F /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1A56FC26258D0D8100628C15 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		1A56FC2B258D0DC100628C15 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 			children = (
 				1A0AA36D2481586A00BA8D0F /* ActionButtonTheme.swift */,
 				1A0AA35F2481582B00BA8D0F /* BaseView.swift */,
+				1A56FC2B258D0DC100628C15 /* BaseCollectionView.swift */,
+				1A56FC26258D0D8100628C15 /* BaseTableView.swift */,
 				1A0AA3622481582B00BA8D0F /* BaseViewController.swift */,
 				1A0AA35E2481582B00BA8D0F /* Logger.swift */,
 				1A0AA3602481582B00BA8D0F /* NError.swift */,
@@ -305,11 +311,13 @@
 				1A0AA3642481582B00BA8D0F /* BaseView.swift in Sources */,
 				1A0AA3652481582B00BA8D0F /* NError.swift in Sources */,
 				1A0AA331248157E000BA8D0F /* SceneDelegate.swift in Sources */,
+				1A56FC27258D0D8100628C15 /* BaseTableView.swift in Sources */,
 				1A0AA36F2481586A00BA8D0F /* ActionButtonTheme.swift in Sources */,
 				1A0AA3672481582B00BA8D0F /* BaseViewController.swift in Sources */,
 				1A0AA3662481582B00BA8D0F /* ReusableView.swift in Sources */,
 				1A0AA36A2481585200BA8D0F /* UIColor+Extensions.swift in Sources */,
 				1A0AA3632481582B00BA8D0F /* Logger.swift in Sources */,
+				1A56FC2C258D0DC100628C15 /* BaseCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
