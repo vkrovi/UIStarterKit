@@ -62,7 +62,7 @@ open class BaseCollectionViewClass: UIView {
 }
 
 extension UICollectionView {
-    static func generic(direction: UICollectionView.ScrollDirection = .vertical, minimumLineSpacing: CGFloat = 16.0, minimumInteritemSpacing: CGFloat = 16.0, insets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0), allowsSelection: Bool = true, allowsMultipleSelection: Bool = false) -> UICollectionView {
+    public static func generic(direction: UICollectionView.ScrollDirection = .vertical, minimumLineSpacing: CGFloat = 16.0, minimumInteritemSpacing: CGFloat = 16.0, insets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0), allowsSelection: Bool = true, allowsMultipleSelection: Bool = false) -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = direction
         layout.minimumLineSpacing = minimumLineSpacing
