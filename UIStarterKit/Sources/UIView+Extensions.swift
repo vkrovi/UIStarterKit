@@ -61,7 +61,7 @@ extension UIView {
 }
 
 extension UIImageView {
-    static func generic(contentMode: UIImageView.ContentMode = .scaleAspectFit, backgroundColor: UIColor = .clear, image: UIImage? = nil) -> UIImageView {
+    public static func generic(contentMode: UIImageView.ContentMode = .scaleAspectFit, backgroundColor: UIColor = .clear, image: UIImage? = nil) -> UIImageView {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = contentMode
         imageView.backgroundColor = backgroundColor
