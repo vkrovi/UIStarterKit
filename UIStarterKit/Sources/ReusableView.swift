@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol RepeatableView: class {
+public protocol RepeatableView: AnyObject {
     static var defaultReuseIdentifier: String { get }
 }
 
